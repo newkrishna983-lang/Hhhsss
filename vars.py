@@ -3,13 +3,13 @@
 
 from os import environ
 
-API_ID = int(environ.get("API_ID", "22946135")) #Replace with your api id
-API_HASH = environ.get("API_HASH", "93e1b0c387cabe34a3ccfa1724ae8527") #Replace with your api hash
-BOT_TOKEN = environ.get("BOT_TOKEN", "8330388328:AAF3IVnhiVJ66JmdvI7ZiRXdlWTVt-2KCY4") #Replace with your bot token
+API_ID = int(environ.get("API_ID", "34422904")) #Replace with your api id
+API_HASH = environ.get("API_HASH", "7e0002469784f47fc08a6b3d93d7ebed") #Replace with your api hash
+BOT_TOKEN = environ.get("BOT_TOKEN", "8638398538:AAGd0NJuGoMEGbY2Zx7d1RHF8z6gaZ5PVo4") #Replace with your bot token
 
 # Database Configuration for MongoDB
 # Example: "mongodb://user:password@host:port/dbname"
 # For MongoDB Atlas: "mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/<dbname>?retryWrites=true&w=majority"
-DATABASE_URL = environ.get("DATABASE_URL", "mongodb+srv://vikrammishra9210_db_user:UWMwNO0M5sFslW4o@cluster0.ollhem3.mongodb.net/?appName=Cluster0")
+DATABASE_URL = environ.get("DATABASE_URL", "mongodb+srv://adarshppandey937:uIoPcln9vXQBF0vP@cluster0.o9mn6hb.mongodb.net/?")
 # Replace "your_bot_db" with your desired database name.
 # For local testing, you might use "mongodb://localhost:27017/your_bot_db"
