@@ -1,18 +1,16 @@
-FROM python:3.10-slim
+FROM python:3.13-slim
 
-RUN apt-get update -y && apt-get upgrade -y \
-    && apt-get install -y --no-install-recommends \
-        gcc \
-        libffi-dev \
-        ffmpeg \
-        aria2 \
-        python3-pip \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# FFmpeg aur dependencies install karein
+RUN apt-get update && apt-get install -y ffmpeg wget git && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-COPY . /app
 
-RUN pip install -r requirements.txt
+# Requirements copy karein
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python", "main.py"]
+# Baaki saara code copy karein
+COPY . .
+
+# Render ke liye command (Flask + Bot dono chalao)
+CMD gunicorn app:app --bind 0.0.0.0:$PORT & python3 main.py
