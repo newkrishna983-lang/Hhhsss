@@ -66,6 +66,8 @@ def hrt(seconds, precision = 0):
 
 timer = Timer()
 
+# ... (keep imports and class Timer) ...
+
 async def progress_bar(current, total, reply, start):
     if timer.can_send():
         now = time.time()
@@ -104,4 +106,4 @@ async def progress_bar(current, total, reply, start):
                     f"✨ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ ᴘɪᴋᴀᴄʜᴜ ✨"
                ) 
             except FloodWait as e:
-                time.sleep(e.x)
+                await asyncio.sleep(e.x)   # ✅ fixed: async sleep
